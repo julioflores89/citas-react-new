@@ -15,15 +15,15 @@ function App() {
 //cuando se recarga la pagina se pierden los datos de local storage 
 //con otro use effect podemos traer de nuevo los datos con un arreglo vacio
 
-useEffect(()=>{
-const obtenerLs=()=>{
-  const pacientesLS=JSON.parse(localStorage.getItem('pacientes'));
-  setPacientes(pacientesLS)
-
-}
-obtenerLs();
-
-},[]);
+useEffect(() => {
+  const obtenerLs = () => {
+    const pacientesLS = JSON.parse(localStorage.getItem('pacientes'));
+    if (pacientesLS) {
+      setPacientes(pacientesLS);
+    }
+  };
+  obtenerLs();
+}, []);
 
 useEffect(()=>{
 localStorage.setItem('pacientes',JSON.stringify(pacientes));
