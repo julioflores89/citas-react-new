@@ -12,7 +12,7 @@ function App() {
   const [pacientes,setPacientes]=useState([]);
   const [paciente,setPaciente]=useState({});
 
-//cuando se recarga la pagina se pierden los datos de local storage
+//cuando se recarga la pagina se pierden los datos de local storage 
 //con otro use effect podemos traer de nuevo los datos con un arreglo vacio
 
 useEffect(()=>{
